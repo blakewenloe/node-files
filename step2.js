@@ -7,11 +7,13 @@ const path = process.argv[2];
 const webCat = (path) => {
   axios
     .get(path)
-    .then(function (response) {
+    .then((response) => {
       console.log(response.data);
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch((error) => {
+      console.log(
+        `error fetching ${path}\nError: Request failed with status code 404`
+      );
     });
 };
 
